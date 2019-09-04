@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>No BS Guitar Chords</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<h1>No BS Chord Search</h1>
+	
+	<input id="search" type="text" placeholder="Search chord name">
+	<div id="matches" style="height:70px; overflow-y:hidden; white-space:pre"></div>
+
+	<script>
+		var chordData = {};
+		
+		function click(event) {
+			alert(event.data.msg);
+		}
+		
+		$(function() { 
+			$.getJSON( "chords.json").done(function(data) {
+				window.chordData = data.chords;
+				console.log(chordData);
+			}).fail(function(data) {
+				console.log('no results found');
+			});
+		});
+		
+		$("#search").on('keypress keyup change input', function() { 
+			var arrival = $(this).val().toLowerCase();
+			$('#matches').text(!arrival.length ? '' : 
+			chordData.filter(function(place) {
+				
+				return (place.name.toLowerCase().indexOf(arrival) !== -1);
+					
+			}).map(function(place) {
+				
+				return place.name;
+	
+			}).join('\n'));
+				
+		});
+		
+		$('#matches').on("click", {msg: "Test click"}, click);
+		
+	</script>
+
+</body>
+</html>

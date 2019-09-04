@@ -1,0 +1,19 @@
+{
+   "chords": [
+		{
+			"name": "A",
+			"code" : "x02220",
+			"altnames" : ["major"]
+		},
+		{
+			"name": "Amaj7",
+			"code" : "x02120",
+			"altnames" : ["A", "major", "7th", "7"]
+		},
+		{
+			"name": "B",
+			"code" : "xx4442",
+			"altnames" : ["major"]
+		}
+	]
+}
