@@ -1,16 +1,29 @@
-var id = getQuery('chord');
+var codeId = 0;
+var codes = [];
+var maxCodeId = 0;
+var name;
+
+getJSON();
 		
-$.getJSON("chords.json", function(json) {
-	$('h1').append('No BS <u>' +json[id].name+ '</u> Chord');
-	assignVal(json[id].name, json[id].code);
-});
+function getJSON(){
+	var id = getQuery('chord');
+	$.getJSON("chords.json", function(json) {
+		name = json[id].name;
+		maxCodeId = Object.keys(json[id].code).length-1;
+		codes = Object.values(json[id].code);
+		$('h1').append('No BS <u>' +name+ '</u> Chord'); //append chord name to h1
+		assignVal(name, codes[0]); 
+	});
+}
 		 
 function assignVal(name, code){
-	var chord = {"name": name, "code" : code}; //this is where you'll have to pass the search result chord
-	math(chord);
+	$('#count').empty();
+	$('#count').append((codeId+1)+'/'+(maxCodeId+1));
+	var chord = {"name": name, "code" : code}; 
+	math(chord); //go do math
 }
 	
-function getQuery(variable) {
+function getQuery(variable) { //get the chord id
 	var query = window.location.search.substring(1);
 	var vars = query.split('&');
 	for (var i = 0; i < vars.length; i++) {
@@ -21,7 +34,7 @@ function getQuery(variable) {
 	}
 }
 
-function math(chord){
+function math(chord){ //everything here calculates and draws the chord shape
 	var canvas = document.getElementById("canvas");
 	var context = canvas.getContext("2d");
 		
@@ -33,7 +46,7 @@ function math(chord){
 		
 	mathChord();
 		
-	function mathChord(){
+	function mathChord(){ //calculations for drawing
 		code = chord.code.split(""); //split code into individual array values
 			
 		var temp = [];
@@ -60,9 +73,9 @@ function math(chord){
 		}
 	}
 		
-	function drawBoard(){
-		var bw = document.body.clientWidth/1.6;
-		var bh = document.body.clientHeight/1.6;
+	function drawBoard(){ //drawing
+		var bw = document.body.clientWidth/1.5;
+		var bh = document.body.clientHeight/1.3;
 		
 		var h = bh/4;
 		var w = bw/5;
@@ -74,32 +87,32 @@ function math(chord){
 			context.fillText(start, 0, 40);
 		}
 			
-		for (var i = 20; i <= bw+20; i += w) { //vertical lines
-			context.moveTo(i, 20);
-			context.lineTo(i, bh+20);
+		for (var i = 25; i <= bw+25; i += w) { //vertical lines
+			context.moveTo(i, 25);
+			context.lineTo(i, bh+25);
 		}
 
-		for (var j = 20; j <= bh+20; j += h) { //horizontal lines
-			context.moveTo(20, j);
-			context.lineTo(bw+20, j);
+		for (var j = 25; j <= bh+25; j += h) { //horizontal lines
+			context.moveTo(25, j);
+			context.lineTo(bw+25, j);
 		}
 
 		context.strokeStyle = "black";
 		context.stroke();
 			
-		for (var i = 20; i <= bw+20; i += w) { //dots
+		for (var i = 25; i <= bw+25; i += w) { //dots
 			if (code[d] > 0){ //draw dots only if not open or muted
 				tmp = h * (code[d]-0.5);
-				drawDot(i, tmp+20, 20);
+				drawDot(i, tmp+25, 25);
 			}
 			if(x[d]==true){ //draw X for muted string
 				context.font = "20px Arial";
-				context.fillText("X", i, 15);
+				context.fillText("X", i, 20);
 			}
 			d++;
 		}
 			
-		function drawDot(x, y, radius) {
+		function drawDot(x, y, radius) { //
 			context.beginPath();
 			context.arc(x, y, radius, 0, 2 * Math.PI, false);
 			context.fillStyle = '#000';
@@ -109,8 +122,8 @@ function math(chord){
 	}
 		
 	function resizeCanvas() { //keeping chord display proportional to window size
-		canvas.width = window.innerWidth/1.08;
-		canvas.height = window.innerHeight/1.08;
+		canvas.width = window.innerWidth/1.1;
+		canvas.height = window.innerHeight/1.1;
 
 		drawBoard(); 
 	}
@@ -118,3 +131,21 @@ function math(chord){
 	resizeCanvas();
 	
 };
+
+function nextSlide() {
+	if(codeId == maxCodeId){
+		codeId = 0;
+	}else{
+		codeId++;
+	}
+	assignVal(name, codes[codeId]);
+}
+
+function prevSlide() {
+	if(codeId == 0){
+		codeId = maxCodeId;
+	}else{
+		codeId--;
+	}
+	assignVal(name, codes[codeId]);
+}

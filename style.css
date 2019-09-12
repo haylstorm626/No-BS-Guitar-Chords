@@ -26,6 +26,7 @@ canvas {
     margin-right: auto;
     display: block;
 	background: #fff; 
+	height: 70%
 }
 
 #search {
@@ -54,9 +55,18 @@ canvas {
   text-decoration: none;
   font-size: 18px;
   color: black;
-  display: block
+  display: block;
 }
 
 #result li a:hover:not(.header) {
   background-color: #eee;
 }
+
+#prev, #next {
+	padding: 0px 10px;
+}
+
+
+
+
+
