@@ -23,7 +23,7 @@ I may change some cosmetics. Maybe not. Half of the purpose of this project is s
 
 ## Technologies
 * JavaScript
-* Some jQuery 3.4.1
+* jQuery 3.4.1
 * JSON
 * HTML 5
 * CSS
