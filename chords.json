@@ -26,32 +26,32 @@
 		},
 		{
 			"name": "B",
-			"code" : ["xx4442"],
+			"code" : ["xx4442", "799877"],
 			"altnames" : ["B", "major"]
 		},
 		{
 			"name": "Bmaj7",
-			"code" : ["22130x", "9baa99", "x24342", "7x887x", "22130x"],
+			"code" : ["22130x", "798877", "9baa99", "x24342", "7x887x", "22130x"],
 			"altnames" : ["B", "major", "7th", "7"]
 		},
 		{
 			"name": "B7",
-			"code" : ["x21202"],
+			"code" : ["x21202", "797877"],
 			"altnames" : ["B", "7th", "7"]
 		},
 		{
 			"name": "Bm",
-			"code" : ["xx4432"],
+			"code" : ["xx4432", "799777"],
 			"altnames" : ["B", "minor"]
 		},
 		{
 			"name": "Bm7",
-			"code" : ["x20202"],
+			"code" : ["x20202", "797777"],
 			"altnames" : ["B", "minor", "7th", "7"]
 		},
 		{
 			"name": "C",
-			"code" : ["x32010"],
+			"code" : ["x32010", "8aa988"],
 			"altnames" : ["C", "major"]
 		},
 		{
@@ -61,72 +61,72 @@
 		},
 		{
 			"name": "C7",
-			"code" : ["x32310"],
+			"code" : ["x32310", "8a8988"],
 			"altnames" : ["C", "7th", "7"]
 		},
 		{
 			"name": "Cm",
-			"code" : ["x310xx"],
+			"code" : ["x310xx", "8aa888"],
 			"altnames" : ["C", "minor"]
 		},
 		{
 			"name": "Cm7",
-			"code" : ["x313xx"],
+			"code" : ["x313xx", "8a8888"],
 			"altnames" : ["C", "minor", "7th", "7"]
 		},
 		{
 			"name": "D",
-			"code" : ["xx0232"],
+			"code" : ["xx0232", "x57775", "accbaa"],
 			"altnames" : ["D", "major"]
 		},
 		{
 			"name": "Dmaj7",
-			"code" : ["xx0222", "x57675", "x5767x"],
+			"code" : ["xx0222", "x57675", "x5767x", "acbbaa"],
 			"altnames" : ["D", "major", "7th", "7"]
 		},
 		{
 			"name": "D7",
-			"code" : ["xx0212"],
+			"code" : ["xx0212", "acabaa"],
 			"altnames" : ["D", "7th", "7"]
 		},
 		{
 			"name": "Dm",
-			"code" : ["xx0231"],
+			"code" : ["xx0231", "accaaa"],
 			"altnames" : ["D", "minor"]
 		},
 		{
 			"name": "Dm7",
-			"code" : ["xx0211"],
+			"code" : ["xx0211", "acaaaa"],
 			"altnames" : ["D", "minor", "7th", "7"]
 		},
 		{
 			"name": "E",
-			"code" : ["022100"],
+			"code" : ["022100", "x79997", "ceedcc", "476454"],
 			"altnames" : ["E", "major"]
 		},
 		{
 			"name": "Emaj7",
-			"code" : ["021100", "x79897", "x7989x"],
+			"code" : ["021100", "x79897", "x7989x", "076444"],
 			"altnames" : ["E", "major", "7th", "7"]
 		},
 		{
 			"name": "E7",
-			"code" : ["020100"],
+			"code" : ["020100", "576750"],
 			"altnames" : ["E", "7th", "7"]
 		},
 		{
 			"name": "Em",
-			"code" : ["022000"],
+			"code" : ["022000", "022453"],
 			"altnames" : ["E", "minor"]
 		},
 		{
 			"name": "Em7",
-			"code" : ["022030"],
+			"code" : ["022030", "022433"],
 			"altnames" : ["E", "minor", "7th", "7"]
 		},
 		{
 			"name": "F",
-			"code" : ["xx3211"],
+			"code" : ["xx3211", "133211"],
 			"altnames" : ["F", "major"]
 		},
 		{
@@ -136,22 +136,22 @@
 		},
 		{
 			"name": "F7",
-			"code" : ["131211"],
+			"code" : ["131211", "xx3545"],
 			"altnames" : ["F", "7th", "7"]
 		},
 		{
 			"name": "Fm",
-			"code" : ["xx3111"],
+			"code" : ["xx3111", "133111"],
 			"altnames" : ["F", "minor"]
 		},
 		{
 			"name": "Fm7",
-			"code" : ["131111"],
+			"code" : ["131111", "xx3544"],
 			"altnames" : ["F", "minor", "7th", "7"]
 		},
 		{
 			"name": "G",
-			"code" : ["320003"],
+			"code" : ["320003", "355433"],
 			"altnames" : ["G", "major"]
 		},
 		{
@@ -166,12 +166,12 @@
 		},
 		{
 			"name": "Gm",
-			"code" : ["xx0333"],
+			"code" : ["xx0333", "355333"],
 			"altnames" : ["G", "minor"]
 		},
 		{
 			"name": "Gm7",
-			"code" : ["x13030"],
+			"code" : ["x13030", "353333"],
 			"altnames" : ["G", "minor", "7th", "7"]
 		}
 	]
